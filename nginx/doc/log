@@ -1,0 +1,20 @@
+### nginx log conf
+sudo /usr/sbin/logrotate -vf /etc/logrotate.d/nginx
+
+[hadoop@ELEX-LA-WEB4 nginx]$ cat /etc/logrotate.d/nginx 
+/data/log/nginx/error.log
+/var/log/nginx/*log
+{
+    daily
+    rotate 10
+    missingok
+    notifempty
+    dateext
+    dateformat .%Y%m%d
+    extension .log
+    compress
+    sharedscripts
+    postrotate
+        [ ! -f /var/run/nginx.pid ] || kill -USR1 `cat /var/run/nginx.pid`
+    endscript
+}

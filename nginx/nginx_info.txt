@@ -1,0 +1,2 @@
+1.nginx默认的启动脚本
+/etc/init.d/nginx

@@ -1,0 +1,12 @@
+实时信息里的同时在线，此检查点为关注HBase入库是否正常 曲线是否正常 
+http://a.xingcloud.com/projects/age/reports/1295 
+
+实时信息里的新增用户，此检查点为关注MYSQL是否入库正常 曲线是否正常
+http://a.xingcloud.com/projects/age/reports/1295 
+
+上一天有数据就行，此检查点为关注离线计算
+活跃用户
+新用户分析
+http://a.xingcloud.com/projects/internet/dashboard     
+http://a.xingcloud.com/projects/internet-1/dashboard
+http://a.xingcloud.com/projects/internet-2/dashboard 

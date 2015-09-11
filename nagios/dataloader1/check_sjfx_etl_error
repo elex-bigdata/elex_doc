@@ -1,0 +1,13 @@
+#!/bin/sh
+f=`cat  /tmp/sjfx-dataloader_etl.out | wc -l`
+t=`tail -3 /tmp/sjfx-dataloader_etl.out`
+
+
+if [ $f == 0 ]
+then
+   echo "check_sjfx_dataloader_etl   is OK !!! "
+   exit 0
+else
+   echo "$t!!!"
+   exit 2
+fi

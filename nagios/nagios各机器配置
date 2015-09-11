@@ -1,0 +1,51 @@
+------------------------------------
+脚本目录:
+/usr/local/nagios/libexec/
+
+------------------------------------
+------------------------------------
+注意：各机器监控脚本有不一致的情况，实际监控那个文件以/tmp/目录下为主。
+------------------------------------
+------------------------------------
+
+
+各个/tmp/目录下文件对应监控
+host:dataloader0
+nagios:
+tmp:
+-rw-r--r--. 1 root   root      0 Mar 24  2014 dataloader_running_error.log
+-rw-r--r--. 1 root   root      0 Sep 11 14:15 sjfx-dataloader_etl.out
+-rw-r--r--. 1 root   root      0 Sep 11 14:15 sjfx-dataloader_flush.out
+-rw-r--r--. 1 root   root      0 Sep 11 14:15 sjfx-facebook_adwords.out
+-rw-r--r--. 1 root   root      0 Sep 11 14:15 sjfx-nginx_error110.out
+
+host:dataloader1
+nagios:
+-rw-r--r--. 1 root   root      0 Mar 24  2014 dataloader_running_error.log
+-rw-r--r--. 1 root   root      0 Sep 11 14:15 sjfx-hadoop2.out
+-rw-r--r--. 1 root   root      0 Sep 11 14:15 sjfx-hadoop.out
+-rw-r--r--. 1 root   root      0 Sep 11 14:15 sjfx-nginx_error110.out
+
+host:dataloader2
+nagios:
+-rw-r--r--. 1 root   root      0 Mar 24  2014 dataloader_running_error.log
+-rw-r--r--. 1 root   root      0 Sep 11 14:20 sjfx-hadoop2.out
+-rw-r--r--. 1 root   root      0 Sep 11 14:20 sjfx-hadoop3.out
+-rw-r--r--. 1 root   root      0 Sep 11 14:20 sjfx-hadoop4.out
+-rw-r--r--. 1 root   root      0 Sep 11 14:20 sjfx-hadoop.out
+
+host:dataloader3
+nagios:
+-rw-r--r--. 1 nagios nagios    0 Sep 11 14:20 dataloader_running_error.log
+-rw-r--r--. 1 root   root      0 Sep 11 14:20 sjfx-hadoop2.out
+-rw-r--r--. 1 root   root      0 Sep 11 14:20 sjfx-hadoop.out
+-rw-r--r--. 1 root   root      0 Sep 11 14:20 sjfx-nginx_error110.out
+
+host:dataloader4
+nagios:
+-rw-r--r--. 1 root   root      0 Sep 11 14:20 sjfx-dataloader_etl.out
+-rw-r--r--. 1 root   root      0 Sep 11 14:20 sjfx-dataloader_flush.out
+-rw-r--r--. 1 root   root      0 Sep 11 14:20 sjfx-facebook_adwords.out
+-rw-r--r--. 1 root   root      0 Sep 11 14:20 sjfx-nginx_error110.out
+
+

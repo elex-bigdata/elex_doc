@@ -1,0 +1,13 @@
+#!/bin/sh
+f=`tail  /tmp/sjfx-facebook_adwords.out | wc -l`
+t=`tail /tmp/sjfx-facebook_adwords.out ` 
+
+
+if [ $f == 0 ]
+then
+   echo "check_sjfx_facebook_adwords is OK !!! "
+   exit 0
+else
+   echo "$t!!!"
+   exit 2
+fi

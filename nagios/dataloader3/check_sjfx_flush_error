@@ -1,0 +1,13 @@
+#!/bin/sh
+f=`cat /tmp/sjfx-hadoop2.out | wc -l`
+t=`tail -3 /tmp/sjfx-hadoop2.out`
+
+
+if [ $f == 0 ]
+then
+   echo "check_sjfx_flush_error   is OK !!! "
+   exit 0
+else
+   echo "$t!!!"
+   exit 2
+fi

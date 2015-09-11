@@ -1,0 +1,13 @@
+#!/bin/sh
+f=`cat /tmp/sjfx-nginx_error110.out | wc -l`
+t=`tail -3 /tmp/sjfx-nginx_error110.out`
+
+
+if [ $f -le 1000 ]
+then
+   echo "check_sjfx_error110   is OK !!! "
+   exit 0
+else
+   echo "$t!!!"
+   exit 2
+fi

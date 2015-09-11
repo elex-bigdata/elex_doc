@@ -1,0 +1,16 @@
+#!/bin/sh
+f=`cat /tmp/sjfx-hadoop3.out | wc -l`
+t=`tail -3 /tmp/sjfx-hadoop3.out`
+
+
+if [ $f == 0 ]
+then
+   echo "check_sjfx_error110   is OK !!! "
+   exit 0
+elesif [ $f == 1 ]
+   echo "check_sjfx_error110   is Warning !!! "
+   exit 1
+else
+   echo "$t!!!"
+   exit 2
+fi

@@ -1,0 +1,15 @@
+#!/bin/sh
+f=`tail  /tmp/sjfx-hadoop.out | wc -l`
+t=`tail  /tmp/sjfx-hadoop.out`
+
+if [ $f == 0 ]
+then
+   echo "sjfx_hadoop_error   is OK !!! "
+   exit 0
+elesif [ $f == 1 ]
+   echo "sjfx_hadoop_error   is Warning !!! "
+   exit 1
+else
+   echo "$t"
+   exit 2
+fi

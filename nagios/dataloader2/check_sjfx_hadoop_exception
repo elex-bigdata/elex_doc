@@ -1,0 +1,15 @@
+#!/bin/sh
+f=`tail -1 /tmp/sjfx-hadoop2.out`
+
+
+if [ $f == 0 ]
+then
+   echo "sjfx_hadoop_exception    is OK !!! "
+   exit 0
+elesif [ $f == 1 ]
+   echo "sjfx_hadoop_exception    is Warning !!! "
+   exit 1
+else
+   echo "sjfx_hadoop_exception  is Critical！！！"
+   exit 2
+fi

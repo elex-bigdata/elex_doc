@@ -1,0 +1,21 @@
+业务经常需要查看发生某个事件的UID
+############################################################
+提取某个事件UID脚本：
+/home/hadoop/liqiang/fetchuid/fetchuid.py
+示例：
+ 导出20150606号项目sof-isafe版本为5.1.0事件为report.virus.error.handlevirus的用户
+ A. 将事件放入event.txt文件中（多个事件换行分隔）
+ B. python fetchuid.py 20150606 sof-isafe "select uid from version where val = '5.1.0'"
+ 结果将输出到以事件为文件名的文件中
+
+
+############################################################
+提取时间范围脚本
+python fetchuid.py 20151203 sof-px \
+"select v.uid from version v join last_login_time t on v.uid=t.uid where v.val='2.1.73' and t.val >= '20151203180000' and t.val <='20151203200000'"
+
+############################################################
+结果集文件做差集方式
+grep -F -v -f exclude.txt visit.txt > result.log
+
+exclude.txt是被过滤UID，visit.txt为原始UID

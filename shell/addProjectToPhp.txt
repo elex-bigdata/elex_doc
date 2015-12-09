@@ -1,0 +1,28 @@
+1.修改目标机器
+dataloader0
+dataloader1
+dataloader2
+dataloader3
+dataloader4
+
+2.修改代码位置
+/data/htdocs/elex_analytics/v4/lib/LogManager.class.php
+
+3.修改代码，追加到array当中，例如gggggg2项目
+$this->appidArr = array(
+                    "xa_damo","22apple","22find","ttsgames","aartemis","awesomehp","cok_337","delta-homes","sof-dp","sof-dsk","l","dosearches","sof-hpprotect","sof-everything","fishao",
+                    "gdp","sof-gdp","sof-seed","sof-ss","v9-gp","hot-finder","ie-lightning-speed","sof-ient","sof-isafe","isearch123","istart123","istartpageing","istartsurf",
+                    "key-find","lightning-newtab","lightning-speedial","lightningnt","lightning-speed-dial","luckybeginning","luckysearches","sof-macinstaller","myoivu",
+                    "mystartsearch","myv9","nationzoom","newgag","newgdppop","newtab-all","newtab2","internet-3","ordt","omiga-plus","omniboxes","oursurfing","sof-picexa-dl",
+                    "sof-px","portaldosites","qone8","qone8search","qvo6","raydownload","safehomepage","sof-pbd-dl","sof-wzp-dl","sof-yacbndl","sof-zbd-dl","sweet-page","v9",
+                    "v9m","v9search","vi-view","wartune-en","web337","webssearches","sof-zip","sof-wzpdl","sof-wpm","sof-wxz","www-337-com","lightningnewtab","yac-error-page",
+                    "xa-xbb","yac-newdl","sof-yacnvd","yoursearching","websupport","shenqu","maomaomei","kjsg","xzqz","livepoolpro","desertoperations","wargame1942","generalsofwar",
+                    "monkeyking","darkorbit","loa","myfreezoo","mlf","farmerama","drakensang","piratestorm","guardiaoonline","dragon-pals","hog","cuponkit","cuponkit-ext","unnamedsoft",
+                    "unsoftnvd","internet-1","internet-2","internet","chhp-unistallmaster","chhp-myoivu","prote-ff-extension","sof-installer","sof-newgdppop","qtype","qtyper",
+                    "quick-sidebar","quick-start","searchprotect","usv9","jiggybonga","xlfc","xlfc-cbnc","yzzt","csbhtw","kszl","ddt","gcld","gcld","gs","age","age2","agei","agei2",
+                    "aoerts","ram","ba2","cok","cokfb","happyfarm","coktw","cokmi","thor","rafo","firefox-searchengine","gggggg","do-search","wuzijing","elex337","minigames337",
+                    "pay337","337admin","ddten","web337vip","unextnvd","sof-mcassist","ggggggsite","mysites123","webpageing","yoursites123","istartpage123","surfpageing","mysurfing123",
+                    "sof-filecheck","ffffff","chroomium","crxbro","datazip","gggggg2"
+                );
+
+备注：更新github或svn代码

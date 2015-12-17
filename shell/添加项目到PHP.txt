@@ -24,5 +24,8 @@ $this->appidArr = array(
                     "pay337","337admin","ddten","web337vip","unextnvd","sof-mcassist","ggggggsite","mysites123","webpageing","yoursites123","istartpage123","surfpageing","mysurfing123",
                     "sof-filecheck","ffffff","chroomium","crxbro","datazip","gggggg2"
                 );
+4.测试修改成功
+http://xa.xingcloud.com/v4/项目名称/123a?update=grade,10
 
-备注：更新github或svn代码
+5.提交代码
+更新github或svn代码

@@ -1,0 +1,6 @@
+查看ETL确实数据
+ansible dataloader -i hosts -m shell -a 'grep "end run Task" /data/log/dataloader_etl.log | tail -n10'
+补充ETL数据
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20151210,39-59,all,Normal@all 116
+
+备注:每次补充数据，不要太多，一次补充20个比较合适。

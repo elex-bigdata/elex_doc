@@ -1,0 +1,4 @@
+/home/hadoop/ivytest/dataloader_etl/bin
+
+重启etl命令
+dataloader_server_start_test.sh

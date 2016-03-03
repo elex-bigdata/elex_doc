@@ -1,6 +1,23 @@
 查看ETL确实数据
 ansible dataloader -i hosts -m shell -a 'grep "end run Task" /data/log/dataloader_etl.log | tail -n10'
 补充ETL数据
-java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20151210,39-59,all,Normal@all 116
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160118,276-287,all,Normal@all
 
 备注:每次补充数据，不要太多，一次补充20个比较合适。
+
+
+
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160118,276-287,all,Normal@all
+276-287
+
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160119,21-30,all,Normal@all
+0-108
+0-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-108
+
+
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160119,51-60,all,Normal@192.168.1.144
+
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160119,51-60,all,Normal@192.168.1.143,192.168.1.145,192.168.1.55
+
+最慢
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160119,71-90,all,Normal@all

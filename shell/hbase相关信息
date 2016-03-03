@@ -1,0 +1,17 @@
+hbase日志信息
+/data2/log/hbase-single
+
+重启命令
+/home/hadoop/hbase-single/bin
+start-hbase.sh
+
+
+启动tasktracker和datanode
+hadoop-0.20-mapreduce-tasktracker
+hadoop-hdfs-datanode
+
+ssh dataloader0 'cat /tmp/sjfx-dataloader_flush.out'
+ssh dataloader1 'cat /tmp/sjfx-hadoop2.out'
+ssh dataloader2 'cat /tmp/sjfx-hadoop2.out'
+ssh dataloader3 'cat /tmp/sjfx-hadoop2.out'
+ssh dataloader4 'cat /tmp/sjfx-dataloader_flush.out'

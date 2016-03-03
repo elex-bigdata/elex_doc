@@ -6,7 +6,7 @@ dataloader3
 dataloader4
 
 2.修改代码位置
-/data/htdocs/elex_analytics/v4/lib/LogManager.class.php
+sudo vim git_project_home/logphpcode/elex_analytics/v4/lib/LogManager.class.php
 
 3.修改代码，追加到array当中，例如gggggg2项目
 $this->appidArr = array(
@@ -24,8 +24,12 @@ $this->appidArr = array(
                     "pay337","337admin","ddten","web337vip","unextnvd","sof-mcassist","ggggggsite","mysites123","webpageing","yoursites123","istartpage123","surfpageing","mysurfing123",
                     "sof-filecheck","ffffff","chroomium","crxbro","datazip","gggggg2"
                 );
+python /home/hadoop/script/php_project_rsync.py
+sh /home/hadoop/script/checkphp.sh
 4.测试修改成功
-http://xa.xingcloud.com/v4/项目名称/123a?update=grade,10
+http://xa.xingcloud.com/v4/ooxxsearch/123a?update=grade,10
 
 5.提交代码
 更新github或svn代码
+
+report

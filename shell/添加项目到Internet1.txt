@@ -1,10 +1,12 @@
 添加Internet成员项目：141机器
 1.
 更改成员项目配置信息: ~/ba/BA/conf/specialtask!
+    添加internet汇总
+    添加internet1或internet2
 2.
-更改load mysql任务列表: ~/ba/BA/script/loadMysqlToHDFS.py!
+更改load mysql任务列表: ~/ba/BA/scripts/loadMysqlToHDFS.py!
 3.
-更改load mysqlidmap任务列表 :~/ba/BA/script/loadmysqlidmap.py!
+更改load mysqlidmap任务列表 : ~/ba/BA/scripts/loadmysqlidmap.py!
 4.
 将load脚本分发到各机器(node[0-15],134) cd ~/ba/BA/scripts ; perl batchscp.pl!
 

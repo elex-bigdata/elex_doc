@@ -19,3 +19,7 @@ python fetchuid.py 20151203 sof-px \
 grep -F -v -f exclude.txt visit.txt > result.log
 
 exclude.txt是被过滤UID，visit.txt为原始UID
+
+提取HBase事件
+python /home/hadoop/wanghaixing/scripts/work/getUidFromHbase.py sof-pbd-dl 20160302 qks.2 qks.txt
+python /home/hadoop/wanghaixing/scripts/work/getUidFromHbase.py sof-pbd-dl 20160302 wzp.10 wzp.txt

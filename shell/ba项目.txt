@@ -1,0 +1,48 @@
+1.导入import到hdfs
+任务file位置
+/data/log/stream.log
+
+任务hdfs位置
+/user/hadoop/stream_log/raw/
+
+任务日志
+/data/log/import.%s.%s.log
+
+2.distribute格式化pid等等只有map任务
+任务hdfs位置
+/user/hadoop/stream_log/pid/2016-03-06/
+
+任务日志
+/data/log/distribute
+
+3.加载idmap
+
+任务位置local
+    #load from mysql
+    local_path = "/data/loadmysqlidmaptohdfs/%s"%pid
+    maxid_path = "/data/loadmysqlidmaptohdfs/%s/maxpid.txt"%pid
+    idmap_path = "/data/loadmysqlidmaptohdfs/%s/id_map.txt"%pid
+任务位置hdfs
+    hdfs_path = "hdfs://ELEX-LA-WEB1:19000/user/hadoop/mysqlidmap/vf_%s"%pid
+    os.system("/home/hadoop/hyx/hadoop-2.0.0-cdh4.3.0/bin/hadoop fs -rm -r %s"%hdfs_path)
+    os.system("/home/hadoop/hyx/hadoop-2.0.0-cdh4.3.0/bin/hadoop fs -mkdir %s"%hdfs_path)
+    command = "/home/hadoop/hyx/hadoop-2.0.0-cdh4.3.0/bin/hadoop fs -copyFromLocal %s/id_map.txt %s"%(local_path, hdfs_path)
+
+任务日志
+/data/log/idmap.
+
+4.加载mysql数据
+
+数据相关目录
+local_path_mysql_dump = "/data2/loadmysqltohdfs/"
+hdfs_path_mysql_dump = "/user/hadoop/mysql/"
+
+任务日志
+/data/log/load.
+
+5.准备工作完成分析
+
+任务日志ba完成
+/data/log/analyze.
+
+然后是newba

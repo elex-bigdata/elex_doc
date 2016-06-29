@@ -1,0 +1,2 @@
+重新启动drill和qm
+sh /home/hadoop/scripts/restart_drill_qm.sh

@@ -1,6 +1,6 @@
 添加Internet成员项目：141机器
 1.
-更改成员项目配置信息: ~/ba/BA/conf/specialtask!
+更改成员项目配置信息: ~/ba/BA/conf/specialtask
     添加internet汇总
     添加internet1或internet2
 2.
@@ -11,3 +11,55 @@
 将load脚本分发到各机器(node[0-15],134) cd ~/ba/BA/scripts ; perl batchscp.pl!
 
 备注：更新github或svn代码
+#########################################################################
+BA执行逻辑
+ba执行类 ba_dayrun_v2.py
+
+
+dataloader = ['192.168.1.142', '192.168.1.143', '192.168.1.144', '192.168.1.145','192.168.1.55']
+
+加载id
+idmap_host = '192.168.1.134'
+
+####################
+for dataloader
+import_stream_cmd = "ssh %s 'hadoop jar /home/hadoop/ba.jar -mode import_stream_log -date %s' > /data/log/import.%s.%s.log"
+1.
+导入/data/log/stream.log 到hdfs hdfsPath + date + "/stream_" + ip + ".log" 目录上
+导入/data/log/stream.log.前一天数据 到hdfs hdfsPath + date + "/stream_" + ip + ".log".前一天数据 目录上
+2.
+hdfs目录
+/user/hadoop/stream_log/raw/2016-04-11
+
+####################
+dist_stream_cmd = "hadoop jar /home/hadoop/hyx/ba.jar -mode distribute_stream_log -date %s > /data/log/distribute.%s.log"
+1.mapreduce任务
+目录输入位置：/user/hadoop/stream_log/raw/2016-04-11
+目录输出位置：/user/hadoop/stream_log/pid/2016-04-11
+outputformat：/user/hadoop/stream_log/pid/2016-04-11/22apple
+
+做了简单ETL
+
+####################
+
+load_mysql_cmd = "ssh %s python loadmysql.py %s all >  /data/log/load.%s.%s.log"
+1.loadmysqltohdfs 实际脚本，位于node0-15上
+2.根据pid来导出实际项目
+
+hdfs上目录：
+ hadoop fs -ls mysql/yac_nvd/nation
+ hadoop fs -ls mysql/yac_nvd/register_time
+
+local本地目录
+ /data2/loadmysqltohdfs/
+ 首先，导入本地目录
+            /data2/loadmysqltohdfs/ + {pid}
+ 然后，导入hdfs
+             local_path = local_path_mysql_dump + pid + "/" + table + ".txt"
+             hdfs_path = "/user/hadoop/mysql/" + pid + "/" + table + "/" + self.host + "_" + table + ".log"
+######################
+load_mysql_idmap_cmd = "ssh %s 'source .bash_profile;/usr/bin/python loadmysqlidmap.py all' > /data/log/idmap.%s.log"
+暂时不看吧
+######################
+analysis_cmd = "hadoop jar /home/hadoop/hyx/ba.jar -mode analytics -pid all -date %s -total_user_only false -common_index_only false -save true >> /data/log/analyze.%s.log"
+

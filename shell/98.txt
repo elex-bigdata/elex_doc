@@ -1,0 +1,78 @@
+新98机器
+58.68.229.35  10.68.229.35   10.168.4.213
+cloud密码：jawgxudp  root密码：jawgxudp
+47dNwp5&TkdDH3hp9ujNHiC
+
+
+98机器
+连接
+OdNwhUcoAExtdDH3hp9ujNHiC | sudo -u app ssh -t 10.68.229.98
+密码
+OdNwhUcoAExtdDH3hp9ujNHiC
+-----------------------安装ruby-----------------------
+安装ruby 1.9.3
+http://blog.csdn.net/forevernull/article/details/37696135
+yum update
+yum install gcc-c++ patch readline readline-devel zlib zlib-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison iconv-devel -y
+curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -
+curl -L get.rvm.io | bash -s stable
+source /etc/profile.d/rvm.sh
+rvm install 1.9.3
+
+----------------------安装mysql-----------------------
+mysql
+系统默认mysql
+
+yum -y install mysql-server mysql mysql-devel
+
+root用户密码
+/usr/bin/mysqladmin -u root password '@q#w$erty6'
+mysql -uroot -p'@q#w$erty6'
+创建用户并授权
+---------------------------应用需要数据库信息-----------------------------
+mysql数据连接信息
+production:
+  adapter: mysql2
+  database: analytic2_production
+  username: analytic
+  password: "ykrz8LTzhpF3oyFE"
+  host: localhost
+  port: 3306
+  encode: utf8
+---------------------------创建数据库信息-----------------------------
+CREATE USER analytic@localhost IDENTIFIED BY 'ykrz8LTzhpF3oyFE';
+create database analytic2_production;
+grant all privileges on analytic2_production.* to analytic@localhost identified by 'ykrz8LTzhpF3oyFE';
+mysql -uanalytic -p'ykrz8LTzhpF3oyFE'
+flush privileges;
+
+-----------------同步数据库---------------
+导出数据
+mysqldump -uanalytic -p analytic2_production >  /home/app/xadump.sql
+导入数据
+mysql -uanalytic -p analytic2_production < /home/app/xadump.sql
+
+rsync -razvp xadump.sql app@10.68.229.35:/home/app
+
+---------------安装ruby rails-------------
+gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
+
+gem install mime-types -v 2.6.2
+gem install rails --no-rdoc --no-ri
+gem install passenger
+
+
+nginx passnager ruby on rails
+-------------------------------------------------
+启动memcache
+启动redis，redis需要导出数据
+启动ruby server
+
+
+
+/usr/local/rvm/gems/ruby-1.9.3-p551/gems/passenger-5.0.29
+/usr/local/rvm/rubies/ruby-1.9.3-p551/bin/ruby
+
+201403.tar.gz
+
+47dNwp5&TkdDH3hp9ujNHiC

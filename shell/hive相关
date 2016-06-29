@@ -1,0 +1,12 @@
+hive metastore
+启动 /home/hadoop/hive/hive-0.11.0-bin/start_metastore.sh
+192.168.1.141机器上
+
+hive metastore 依赖数据库mysql
+启动命令：sudo /bin/sh /usr/bin/mysqld_safe
+192.168.1.142机器上 dataloader0
+
+debug测试hive命令
+hive -hiveconf hive.root.logger=DEBUG,console
+
+

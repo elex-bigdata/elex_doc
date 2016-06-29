@@ -1,23 +1,87 @@
 查看ETL确实数据
 ansible dataloader -i hosts -m shell -a 'grep "end run Task" /data/log/dataloader_etl.log | tail -n10'
+
+查询某一天
+grep "end run Task" dataloader_etl.log.2016-03-26 | tail -n10
+
 补充ETL数据
 java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160118,276-287,all,Normal@all
 
 备注:每次补充数据，不要太多，一次补充20个比较合适。
 
+flush数据 查看每天导入hbase和mysql数据
+ansible dataloader -i hosts -m shell -a 'tail -n10 /data/log/user16config/sendlog.process' mysql 3000千万 9：0
+ansible dataloader -i hosts -m shell -a 'tail -n10 /data/log/event16config/sendlog.process'  hbase 7000千万
 
 
-java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160118,276-287,all,Normal@all
-276-287
+补充所有
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,276-287,all,Normal@all
 
-java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160119,21-30,all,Normal@all
-0-108
-0-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-1080-108
-
-
+补充单个
 java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160119,51-60,all,Normal@192.168.1.144
 
-java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160119,51-60,all,Normal@192.168.1.143,192.168.1.145,192.168.1.55
+http://a.xingcloud.com/projects/ggggggsite/reports/1295
+http://a.xingcloud.com/projects/hohosearch/reports/1295
+http://a.xingcloud.com/projects/mysites123/reports/1295
+http://a.xingcloud.com/projects/istartpageing/reports/1295
+http://a.xingcloud.com/projects/yoursearching/reports/1295
+====================================================================================================================================================================
+补充两个项目
+补充个别项目 166-186
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,80-124,ggggggsite,Normal@all
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,80-124,hohosearch,Normal@all
 
-最慢
-java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160119,71-90,all,Normal@all
+
+统一到79
+dataloader0
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,63-79,ggggggsite,Normal@192.168.1.142
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,63-79,hohosearch,Normal@192.168.1.142
+
+
+dataloader2 192.168.1.144
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,58-79,ggggggsite,Normal@192.168.1.144
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,58-79,hohosearch,Normal@192.168.1.144
+
+
+dataloader3
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,70-79,ggggggsite,Normal@192.168.1.145
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,70-79,hohosearch,Normal@192.168.1.145
+
+
+
+dataloader4
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,66-79,ggggggsite,Normal@192.168.1.55
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,66-79,hohosearch,Normal@192.168.1.55
+
+========================================================================================================================================================================
+补充两个项目
+补充个别项目 207
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,166-207,mysites123,Normal@all
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,166-207,istartpageing,Normal@all
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,166-207,yoursearching,Normal@all
+
+
+统一到79
+dataloader0
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,63-79,mysites123,Normal@192.168.1.142
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,63-79,istartpageing,Normal@192.168.1.142
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,63-79,yoursearching,Normal@192.168.1.142
+
+
+dataloader2 192.168.1.144
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,58-79,mysites123,Normal@192.168.1.144
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,58-79,istartpageing,Normal@192.168.1.144
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,58-79,yoursearching,Normal@192.168.1.144
+
+
+dataloader3
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,70-79,mysites123,Normal@192.168.1.145
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,70-79,istartpageing,Normal@192.168.1.145
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,70-79,yoursearching,Normal@192.168.1.145
+
+
+
+dataloader4
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,66-79,mysites123,Normal@192.168.1.55
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,66-79,istartpageing,Normal@192.168.1.55
+java -classpath ~/xa/runJar/dataloader_etl_testCoin.jar com.xingcloud.dataloader.server.DataLoaderMessageMaker fixTask,20160326,66-79,yoursearching,Normal@192.168.1.55

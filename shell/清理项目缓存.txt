@@ -1,0 +1,5 @@
+清理某个项目缓存
+ssh 192.168.1.61
+sh /data/redis-scripts/redis_clear_helper.sh nicesearches 2016-06-22
+
+

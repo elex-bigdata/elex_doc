@@ -23,3 +23,7 @@ exclude.txt是被过滤UID，visit.txt为原始UID
 提取HBase事件
 python /home/hadoop/wanghaixing/scripts/work/getUidFromHbase.py sof-pbd-dl 20160302 qks.2 qks.txt
 python /home/hadoop/wanghaixing/scripts/work/getUidFromHbase.py sof-pbd-dl 20160302 wzp.10 wzp.txt
+
+python /home/hadoop/wanghaixing/scripts/work/querymysql.py walasearch "replace into nation select uid,trim(val) from nation"
+
+mysql -u root -p'' -se 'use 16_walasearch;replace into nation select uid,trim(val) from nation'
